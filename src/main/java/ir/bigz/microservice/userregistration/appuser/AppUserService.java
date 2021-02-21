@@ -77,12 +77,6 @@ public class AppUserService implements UserDetailsService {
     }
 
     private boolean checkAppUserEqual(AppUser source, AppUser request){
-        if(source.getFirstName().equals(request.getFirstName())){
-           if(source.getLastName().equals(request.getLastName())){
-               return true;
-           }
-           return false;
-        }
-        return false;
+        return source.userIsSame(request);
     }
 }

@@ -86,4 +86,11 @@ public class AppUser implements UserDetails {
     public boolean isEnabled() {
         return enabled;
     }
+
+    public boolean userIsSame(AppUser appUser){
+        if(this.getFirstName().equals(appUser.getFirstName())){
+            return this.getLastName().equals(appUser.getLastName());
+        }
+        return false;
+    }
 }
